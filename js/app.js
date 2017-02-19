@@ -10,16 +10,16 @@
 var allFeeds = [
     {
         name: 'Udacity Blog',
-        url: '//blog.udacity.com/feed'
+        url: 'https://blog.udacity.com/feed'
     }, {
         name: 'CSS Tricks',
-        url: '//feeds.feedburner.com/CssTricks'
+        url: 'https://feeds.feedburner.com/CssTricks'
     }, {
         name: 'HTML5 Rocks',
-        url: '//feeds.feedburner.com/html5rocks'
+        url: 'https://feeds.feedburner.com/html5rocks'
     }, {
         name: 'Linear Digressions',
-        url: '//feeds.feedburner.com/udacity-linear-digressions'
+        url: 'https://feeds.feedburner.com/udacity-linear-digressions'
     }
 ];
 
@@ -46,7 +46,7 @@ function init() {
 
      $.ajax({
        type: "POST",
-       url: '//rsstojson.udacity.com/parseFeed',
+       url: 'https://rsstojson.udacity.com/parseFeed',
        data: JSON.stringify({url: feedUrl}),
        contentType:"application/json",
        success: function (result, status){
