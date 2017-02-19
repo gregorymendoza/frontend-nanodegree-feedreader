@@ -18,17 +18,14 @@ $(function() {
 
         /* This is our first test - it tests to make sure that the
          * allFeeds variable has been defined and that it is not
-         * empty. Experiment with this before you get started on
-         * the rest of this project. What happens when you change
-         * allFeeds in app.js to be an empty array and refresh the
-         * page?
+         * empty.
          */
         it('are defined', function() {
             expect(allFeeds).toBeDefined();
             expect(feedsLen).not.toBe(0);
         });
 
-        /* Test that loops through each feed
+        /* This test loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
@@ -39,7 +36,7 @@ $(function() {
             }
         });
 
-        /* Test that loops through each feed
+        /* This test loops through each feed
          * in the allFeeds object and ensures it has a name defined
          * and that the name is not empty.
          */
@@ -56,19 +53,18 @@ $(function() {
     describe('The menu', function() {
         var body = $('body');
 
-        /* Test that ensures the menu element is
-         * hidden by default. You'll have to analyze the HTML and
-         * the CSS to determine how we're performing the
-         * hiding/showing of the menu element.
+        /* This test ensures the menu element is hidden by default.
+         * The HTML and the CSS were analized to determine how the
+         * hiding/showing of the menu element was performed.
          */
         it('should be hidden by default', function() {
             expect(body.is('.menu-hidden')).toBe(true);
         });
 
-        /* Test that ensures the menu changes
-         * visibility when the menu icon is clicked. This test
-         * should have two expectations: does the menu display when
-         * clicked and does it hide when clicked again.
+        /* This test ensures the menu changes visibility
+         * when the menu icon is clicked. This test
+         * have two expectations: the menu displays when
+         * clicked and it hides when clicked again.
          */
         it('should change visibility when the menu icon is clicked', function() {
             $('.menu-icon-link').trigger('click');
@@ -81,10 +77,10 @@ $(function() {
     /* "Initial Entries" test suite */
     describe('Initial Entries', function() {
 
-        /* Test that ensures when the loadFeed
+        /* This test ensures when the loadFeed
          * function is called and completes its work, there is at least
          * a single .entry element within the .feed container.
-         * Remember, loadFeed() is asynchronous so this test will require
+         * LoadFeed() is asynchronous so this test requires
          * the use of Jasmine's beforeEach and asynchronous done() function.
          */
         beforeEach(function(done) {
@@ -100,17 +96,14 @@ $(function() {
     describe('New Feed Selection', function() {
         var initialFeed, newerFeed;
 
-        /* Test that ensures when a new feed is loaded
-         * by the loadFeed function that the content actually changes.
-         * Remember, loadFeed() is asynchronous.
+        /* This test ensures when a new feed is loaded by the
+         * loadFeed asynchronous function that the content actually changes.
          */
         beforeEach(function(done) {
             loadFeed(0, function() {
                 initialFeed = $('.feed').get(0).innerHTML;
-                console.log(initialFeed);
                 loadFeed(1, function() {
                     newerFeed = $('.feed').get(0).innerHTML;
-                    console.log(newerFeed);
                     done();
                 });
             });
